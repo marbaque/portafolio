@@ -16,6 +16,6 @@ function cp_change_post_object() {
         $labels->not_found = 'No se encontraron ítems';
         $labels->not_found_in_trash = 'No hay ítems en la papelera';
         $labels->all_items = 'Ítems';
-        $labels->menu_name = 'bitacoras';
+        $labels->menu_name = 'portafolios';
         $labels->name_admin_bar = 'Ítems';
 }

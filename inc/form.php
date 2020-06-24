@@ -33,7 +33,7 @@ function my_acf_form_init()
             'field_groups' => array(1844), // Create post field group ID(s)
             'form' => true,
             'instruction_placement' => 'field',
-            'return' => '/nueva-bitacora', // Redirect to new post url
+            'return' => '/item-pendiente', // Redirect to new post url
             'html_before_fields' => '',
             'html_after_fields' => '',
             //'uploader' => 'basic',

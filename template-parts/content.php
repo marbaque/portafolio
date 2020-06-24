@@ -34,7 +34,7 @@
 
 			if ( 'post' === get_post_type() ) : ?>
 			<div class="entry-meta">
-				<?php bitacoras_posted_on(); ?>
+				<?php portafolios_posted_on(); ?>
 			</div><!-- .entry-meta -->
 			<?php
 			endif; ?>

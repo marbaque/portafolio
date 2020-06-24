@@ -15,9 +15,9 @@ function my_theme_enqueue_styles() {
 }
 
 // Cargar estilos y scripts adicionales
-add_action( 'wp_enqueue_scripts', 'bitacoras_stylesheet' );
+add_action( 'wp_enqueue_scripts', 'portafolios_stylesheet' );
 
-function bitacoras_stylesheet() {
+function portafolios_stylesheet() {
     wp_enqueue_script( 'masonry', get_template_directory_uri() . '/js/masonry.pkgd.min.js', '1.0', true );
 
 }

@@ -1,43 +1,43 @@
 /*
- Theme Name:   bitacoras
+ Theme Name:   Portafolio
  Theme URI:    http://example.com/twenty-fifteen-child/
  Description:  Tema hijo de pemscores SAPS
  Author:       Mario Badilla
  Author URI:   http://multimedia.uned.ac.cr
  Template:     pemscores
  Version:      1.0.0
- License:      CC0
+ License:      MIT License
  License URI:  http://www.gnu.org/licenses/gpl-2.0.html
  Tags:         masonry, education, spanish
- Text Domain:  bitacoras
+ Text Domain:  portafolios
 */
 .home .site-content {
   padding: 2em 1em; }
   .home .site-content #breadcrumbs {
     padding: 0 1em; }
 
-.bitacoras-area {
+.portafolios-area {
   width: 100%; }
-  .bitacoras-area .grid {
+  .portafolios-area .grid {
     width: 100%; }
-  .bitacoras-area .grid-item {
+  .portafolios-area .grid-item {
     margin: 0 auto;
     text-align: center; }
     @media screen and (min-width: 600px) {
-      .bitacoras-area .grid-item {
+      .portafolios-area .grid-item {
         width: 48%;
         height: auto;
         margin: 0.5em 1%;
         font-size: 0.85em; } }
     @media screen and (min-width: 900px) {
-      .bitacoras-area .grid-item {
+      .portafolios-area .grid-item {
         width: 30%;
         margin: 0.5em 1.5%; } }
-    .bitacoras-area .grid-item .post {
+    .portafolios-area .grid-item .post {
       position: relative; }
-      .bitacoras-area .grid-item .post.sticky {
+      .portafolios-area .grid-item .post.sticky {
         background-color: #ebeef4; }
-  .bitacoras-area .pagination {
+  .portafolios-area .pagination {
     width: 100%;
     clear: both; }
 

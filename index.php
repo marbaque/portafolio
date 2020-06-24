@@ -16,7 +16,7 @@ get_header(); ?>
 
 <?php if ( have_posts() ) : ?>
 
-	<div id="primary" class="bitacoras-area">
+	<div id="primary" class="portafolios-area">
 		<main id="main" class="site-main" role="main">
 
 		<?php 
