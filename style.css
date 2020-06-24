@@ -5,11 +5,12 @@
  Author:       Mario Badilla
  Author URI:   http://multimedia.uned.ac.cr
  Template:     pemscores
- Version:      1.0.0
+ Version:      1.2
  License:      MIT License
  License URI:  http://www.gnu.org/licenses/gpl-2.0.html
  Tags:         masonry, education, spanish
  Text Domain:  portafolios
+ GitHub Theme URI: https://github.com/marbaque/portafolio
 */
 .home .site-content {
   padding: 2em 1em; }
