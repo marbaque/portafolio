@@ -1,19 +1,5 @@
 <?php
 
-// Guardar campos en el tema
-add_filter('acf/settings/save_json', 'my_acf_json_save_point');
-
-function my_acf_json_save_point($path)
-{
-
-    // update path
-    $path = get_stylesheet_directory() . '/fields';
-
-
-    // return
-    return $path;
-}
-
 // Forumulario
 add_action('acf/init', 'my_acf_form_init');
 function my_acf_form_init()
@@ -30,7 +16,7 @@ function my_acf_form_init()
             'post_title'    => true,
             'post_content'    => true,
             // PUT IN YOUR OWN FIELD GROUP ID(s)
-            'field_groups' => array(1844), // Create post field group ID(s)
+            'field_groups' => array('group_5ef1515c035ad'), // Create post field group ID(s)
             'form' => true,
             'instruction_placement' => 'field',
             'return' => '/item-pendiente', // Redirect to new post url

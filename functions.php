@@ -22,6 +22,25 @@ function portafolios_stylesheet() {
 
 }
 
+// Guardar campos en el tema
+add_filter('acf/settings/load_json', 'my_acf_json_load_point');
+
+function my_acf_json_load_point( $paths ) {
+    
+    // remove original path (optional)
+    unset($paths[0]);
+    
+    
+    // append path
+    $paths[] = get_stylesheet_directory() . '/acf-json';
+    //$paths[] = get_template_directory_uri() . '/acf-json';
+
+    
+    // return
+    return $paths;
+    
+}
+
 
 // Remove the action that adds custom styles to gutenberg
 add_action( 'init', 'remove_my_action');

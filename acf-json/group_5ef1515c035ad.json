@@ -1,10 +1,10 @@
 {
     "key": "group_5ef1515c035ad",
-    "title": "Características del ítem",
+    "title": "Datos del ítem",
     "fields": [
         {
             "key": "field_5ef152305cb6d",
-            "label": "Imagen de portada",
+            "label": "Imagen para portada",
             "name": "pf_portada",
             "type": "image",
             "instructions": "Comparta una imagen descriptiva de su proyecto. Puede compartir la imagen arrastrando su ícono sobre la ventana que se despliega al hacer clic en \"Seleccionar imagen\". Los archivos grandes JPG, PNG (de ancho superior a 1000px) funcionan mejor.",
@@ -18,7 +18,7 @@
             "return_format": "id",
             "preview_size": "medium",
             "library": "uploadedTo",
-            "min_width": 566,
+            "min_width": 600,
             "min_height": "",
             "min_size": "",
             "max_width": 3000,
@@ -209,5 +209,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1593019638
+    "modified": 1593023096
 }
