@@ -34,3 +34,4 @@ Temporary Items
 
 # No guardar el cache de sass
 .sass-cache/
+.htaccess
