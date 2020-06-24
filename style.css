@@ -1,0 +1,98 @@
+/*
+ Theme Name:   bitacoras
+ Theme URI:    http://example.com/twenty-fifteen-child/
+ Description:  Tema hijo de pemscores SAPS
+ Author:       Mario Badilla
+ Author URI:   http://multimedia.uned.ac.cr
+ Template:     pemscores
+ Version:      1.0.0
+ License:      CC0
+ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+ Tags:         masonry, education, spanish
+ Text Domain:  bitacoras
+*/
+.home .site-content {
+  padding: 2em 1em; }
+  .home .site-content #breadcrumbs {
+    padding: 0 1em; }
+
+.bitacoras-area {
+  width: 100%; }
+  .bitacoras-area .grid {
+    width: 100%; }
+  .bitacoras-area .grid-item {
+    margin: 0 auto;
+    text-align: center; }
+    @media screen and (min-width: 600px) {
+      .bitacoras-area .grid-item {
+        width: 48%;
+        height: auto;
+        margin: 0.5em 1%;
+        font-size: 0.85em; } }
+    @media screen and (min-width: 900px) {
+      .bitacoras-area .grid-item {
+        width: 30%;
+        margin: 0.5em 1.5%; } }
+    .bitacoras-area .grid-item .post {
+      position: relative; }
+      .bitacoras-area .grid-item .post.sticky {
+        background-color: #ebeef4; }
+  .bitacoras-area .pagination {
+    width: 100%;
+    clear: both; }
+
+.acf-form .upload {
+  background-color: #f4f4f4;
+  border-radius: 0.5em;
+  padding: 2em; }
+  .acf-form .upload .button {
+    background-color: green;
+    padding: 0.5em;
+    border-radius: 4px;
+    color: white;
+    text-decoration: none; }
+.acf-form .info {
+  margin: 2em 0; }
+.acf-form .description {
+  font-size: 0.8em; }
+
+#breadcrumbs li {
+  position: relative;
+  margin-right: 0; }
+  #breadcrumbs li a,
+  #breadcrumbs li .current-item {
+    display: block;
+    text-decoration: none;
+    background-color: #f4f4f4;
+    padding: 0.25em 0.75em 0.25em 1.5em; }
+  #breadcrumbs li a:after {
+    background-color: white;
+    clip-path: polygon(0 0, 50% 0, 100% 50%, 50% 100%, 0 100%, 50% 50%);
+    display: block;
+    content: "";
+    width: 12px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: -12px;
+    z-index: 99; }
+#breadcrumbs .separator {
+  display: none; }
+
+.single #breadcrumbs {
+  font-size: 80%;
+  margin-bottom: 2em; }
+.single .hentry {
+  width: 100%; }
+.single .entry-header {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto; }
+.single .post-content {
+  width: 100% !important;
+  max-width: 900px;
+  margin: 0 auto; }
+  .single .post-content .entry-content {
+    padding: 0; }
+
+/*# sourceMappingURL=style.css.map */
