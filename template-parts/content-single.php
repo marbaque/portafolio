@@ -20,6 +20,12 @@
 		</figure><!-- .featured-image full-bleed -->
 	<?php } ?>
 
+	<?php 
+		if ( function_exists( 'pemscores_breadcrumbs' ) ) {
+			pemscores_breadcrumbs();
+		}
+	?>
+
 	<header class="entry-header">
 		<?php pemscores_the_category_list(); ?>
 
@@ -31,7 +37,7 @@
 		endif; ?>
 
 		<div class="entry-meta">
-			<?php pemscores_posted_on(); ?>
+			<?php portafolios_posted_on(); ?>
 		</div><!-- .entry-meta -->
 	</header><!-- .entry-header -->
 

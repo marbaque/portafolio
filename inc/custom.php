@@ -11,7 +11,7 @@ function cp_change_post_object() {
         $labels->add_new_item = 'Añadir ítem';
         $labels->edit_item = 'Editar ítem';
         $labels->new_item = 'Ítems';
-        $labels->view_item = 'Ver ítems';
+        $labels->view_item = 'Ver ítem';
         $labels->search_items = 'Buscar ítems';
         $labels->not_found = 'No se encontraron ítems';
         $labels->not_found_in_trash = 'No hay ítems en la papelera';

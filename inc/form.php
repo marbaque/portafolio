@@ -46,3 +46,21 @@ function acf_set_featured_image($value, $post_id, $field)
 
 // acf/update_value/name={$field_name} - filter for a specific field based on it's name
 add_filter('acf/update_value/name=pf_portada', 'acf_set_featured_image', 10, 3);
+
+
+
+// Modify ACF Form Label for Post Title Field
+function wd_post_title_acf_name($field)
+{
+    $field['label'] = 'Título';
+    return $field;
+}
+add_filter('acf/load_field/name=_post_title', 'wd_post_title_acf_name');
+
+// Modify ACF Form Label for Post Content Field
+function wd_post_content_acf_name($field)
+{
+    $field['label'] = 'Contenido';
+    return $field;
+}
+add_filter('acf/load_field/name=_post_content', 'wd_post_content_acf_name');

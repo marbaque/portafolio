@@ -1,6 +1,6 @@
 <?php
 /*
-** Template Name: Nuevo item de portafolio
+** Template Name: Formulario de nuevo ítem
 */
 
 acf_form_head();
@@ -8,20 +8,21 @@ acf_form_head();
 get_header();
 
 ?>
-<div id="content" class="site-content" role="main">
+<div id="primary" class="content-area full-width">
+		<main id="main" class="site-main" role="main">
 
-	<header class="entry-header">
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-	</header><!-- .entry-header -->
+			<?php
+			while ( have_posts() ) : the_post();
 
-	<p>
-	Utilice este formulario para compartir en una página las evidencias de su ejercicio o experiencia. Por favor añada un título y una imagen representativa de su relato. Si desea ver lo que otros han compartido, revise la colección completa de portafolios.
-	</p>
+				get_template_part( 'template-parts/content', 'page' );
 
-	<p>Gracias por agregar su proyecto en esta colección. Los campos marcados con * son obligatorios.</p>
+				acf_form('new-portafolio');
 
-	<?php acf_form('new-portafolio'); ?>
-	
+			endwhile; // End of the loop.
+			?>
+
+		</main><!-- #main -->
+	</div><!-- #primary -->
 </div>
 
 <?php get_footer(); ?>
