@@ -19,16 +19,6 @@ function my_theme_enqueue_styles()
     );
 }
 
-// Cargar estilos y scripts adicionales
-add_action('wp_enqueue_scripts', 'portafolios_stylesheet');
-
-function portafolios_stylesheet()
-{
-    wp_enqueue_script('masonry');
-    wp_enqueue_script('portafolios-infinite', get_stylesheet_directory_uri() . '/js/infinite-scroll.pkgd.min.js', '1.0', true);
-    wp_enqueue_script('portafolios-masonry', get_stylesheet_directory_uri() . '/js/masonry.js', '1.0', true);
-}
-
 // Guardar campos en el tema
 add_filter('acf/settings/load_json', 'my_acf_json_load_point');
 
@@ -73,6 +63,46 @@ function prefix_disable_gutenberg($current_status, $post_type)
     // Use your post type key instead of 'product'
     if ($post_type === 'post') return false;
     return $current_status;
+}
+
+/**
+ * Enqueue jQuery, imagesLoaded, Isotope and its settings.
+ */
+function isotopeinwp_scripts()
+{
+    if (is_home() || is_archive()) {
+        wp_register_script('imagesloaded', get_theme_file_uri('/JS/libs/imagesloaded.pkgd.min.js'), array('jquery'), '4.1.1', true);
+        wp_register_script('isotope', get_theme_file_uri('/JS/libs/isotope.pkgd.min.js'), array('imagesloaded'), '3.0.1', true);
+        wp_enqueue_script('isotopeinwp-settings', get_theme_file_uri('/JS/isotope.settings.js'), array('isotope'), '1.0', true);
+    }
+}
+
+add_action('wp_enqueue_scripts', 'isotopeinwp_scripts');
+
+
+/* 
+    Quitar category- y tag- de las clases.
+    No necesito agregar tags y categories porque
+    ya están. Pero tengo que quitarle "category-"
+    y "cat-" de las clases.
+*/
+add_filter('post_class', 'portafolios_post_class');
+
+function portafolios_post_class($classes)
+{
+    $out = array();
+
+    foreach ($classes as $class) {
+        if (0 === strpos($class, 'tag-')) {
+            $out[] = substr($class, 4);
+        } elseif (0 === strpos($class, 'category-')) {
+            $out[] = substr($class, 9);
+        } else {
+            $out[] = $class;
+        }
+    }
+
+    return array_unique($out);
 }
 
 

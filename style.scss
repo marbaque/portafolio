@@ -19,8 +19,11 @@ $size__ratio-large: 60%;
 $query__small: 600px;
 $query__medium: 900px;
 
-.home .site-content {
-    padding: 2em 1em;
+.home,
+.archive {
+    .site-content {
+        padding: 2em 1em;
+    }
 
     #breadcrumbs {
         padding: 0 1em;
@@ -30,31 +33,31 @@ $query__medium: 900px;
 .portafolios-area {
     width: 100%;
 
+    .main {
+        width: 100%;
+    }
+
     .grid {
         width: 100%;
         margin: 0 auto;
-    }
 
-    .grid-item,
-    .grid-sizer {
-        margin: 0 auto;
-        text-align: center;
-        float: left;
+        .post,
+        .grid-sizer {
+            margin: 0 auto;
+            text-align: center;
+            float: left;
 
-        @media screen and (min-width: $query__small) {
-            width: 48%;
-            height: auto;
-            margin: 0.5em 1%;
-            font-size: 0.85em;
-        }
+            @media screen and (min-width: $query__small) {
+                width: 48%;
+                height: auto;
+                margin: 0.5em 1%;
+                font-size: 0.85em;
+            }
 
-        @media screen and (min-width: $query__medium) {
-            width: 30%;
-            margin: 0.5em 1.5%;
-        }
-
-        .post {
-            position: relative;
+            @media screen and (min-width: $query__medium) {
+                width: 30%;
+                margin: 0.5em 1.5%;
+            }
 
             &.sticky {
                 background-color: #ebeef4;
@@ -152,4 +155,50 @@ $query__medium: 900px;
     }
 }
 
-// Estilos para elementos creados en classic editor
+// Estilos de filtros
+aside.filters {
+    .widget {
+        margin-bottom: 0.5em;
+
+        &.categories {
+            font-size: 1em;
+        }
+    }
+    ul {
+        padding: 0;
+        margin: 0;
+
+        li {
+            display: inline;
+            margin-right: 4px;
+
+            input[type="checkbox"] {
+                display: none;
+            }
+            label {
+                background: #f4f4f4;
+                padding: 4px;
+                border-radius: 4px 6px;
+                font-size: 0.9em;
+            }
+
+            &.checked {
+                label {
+                    background: orange;
+                }
+            }
+        }
+    }
+
+    button {
+        padding-left: 30px;
+        &.clear-all {
+            background: url("images/broom-solid.svg") no-repeat #f4f4f4 4px center;
+            background-size: 20px 20px;
+        }
+        &.sort {
+            background: url("images/sort-alpha-up-solid.svg") no-repeat #f4f4f4 4px center;
+            background-size: 20px 20px;
+        }
+    }
+}

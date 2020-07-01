@@ -12,38 +12,39 @@
  Text Domain:  portafolios
  GitHub Theme URI: https://github.com/marbaque/portafolio
 */
-.home .site-content {
+.home .site-content,
+.archive .site-content {
   padding: 2em 1em; }
-  .home .site-content #breadcrumbs {
-    padding: 0 1em; }
+.home #breadcrumbs,
+.archive #breadcrumbs {
+  padding: 0 1em; }
 
 .portafolios-area {
   width: 100%; }
+  .portafolios-area .main {
+    width: 100%; }
   .portafolios-area .grid {
     width: 100%;
     margin: 0 auto; }
-  .portafolios-area .grid-item,
-  .portafolios-area .grid-sizer {
-    margin: 0 auto;
-    text-align: center;
-    float: left; }
-    @media screen and (min-width: 600px) {
-      .portafolios-area .grid-item,
-      .portafolios-area .grid-sizer {
-        width: 48%;
-        height: auto;
-        margin: 0.5em 1%;
-        font-size: 0.85em; } }
-    @media screen and (min-width: 900px) {
-      .portafolios-area .grid-item,
-      .portafolios-area .grid-sizer {
-        width: 30%;
-        margin: 0.5em 1.5%; } }
-    .portafolios-area .grid-item .post,
-    .portafolios-area .grid-sizer .post {
-      position: relative; }
-      .portafolios-area .grid-item .post.sticky,
-      .portafolios-area .grid-sizer .post.sticky {
+    .portafolios-area .grid .post,
+    .portafolios-area .grid .grid-sizer {
+      margin: 0 auto;
+      text-align: center;
+      float: left; }
+      @media screen and (min-width: 600px) {
+        .portafolios-area .grid .post,
+        .portafolios-area .grid .grid-sizer {
+          width: 48%;
+          height: auto;
+          margin: 0.5em 1%;
+          font-size: 0.85em; } }
+      @media screen and (min-width: 900px) {
+        .portafolios-area .grid .post,
+        .portafolios-area .grid .grid-sizer {
+          width: 30%;
+          margin: 0.5em 1.5%; } }
+      .portafolios-area .grid .post.sticky,
+      .portafolios-area .grid .grid-sizer.sticky {
         background-color: #ebeef4; }
   .portafolios-area .pagination {
     width: 100%;
@@ -102,5 +103,33 @@
   margin: 0 auto; }
   .single .post-content .entry-content {
     padding: 0; }
+
+aside.filters .widget {
+  margin-bottom: 0.5em; }
+  aside.filters .widget.categories {
+    font-size: 1em; }
+aside.filters ul {
+  padding: 0;
+  margin: 0; }
+  aside.filters ul li {
+    display: inline;
+    margin-right: 4px; }
+    aside.filters ul li input[type="checkbox"] {
+      display: none; }
+    aside.filters ul li label {
+      background: #f4f4f4;
+      padding: 4px;
+      border-radius: 4px 6px;
+      font-size: 0.9em; }
+    aside.filters ul li.checked label {
+      background: orange; }
+aside.filters button {
+  padding-left: 30px; }
+  aside.filters button.clear-all {
+    background: url("images/broom-solid.svg") no-repeat #f4f4f4 4px center;
+    background-size: 20px 20px; }
+  aside.filters button.sort {
+    background: url("images/sort-alpha-up-solid.svg") no-repeat #f4f4f4 4px center;
+    background-size: 20px 20px; }
 
 /*# sourceMappingURL=style.css.map */
