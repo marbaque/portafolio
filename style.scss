@@ -5,7 +5,7 @@
  Author:       Mario Badilla
  Author URI:   http://multimedia.uned.ac.cr
  Template:     pemscores
- Version:      1.7
+ Version:      1.8.1
  License:      MIT License
  License URI:  http://www.gnu.org/licenses/gpl-2.0.html
  Tags:         masonry, education, spanish
@@ -48,15 +48,13 @@ $query__medium: 900px;
             float: left;
 
             @media screen and (min-width: $query__small) {
-                width: 48%;
+                width: calc(100% / 2);
                 height: auto;
-                margin: 0.5em 1%;
                 font-size: 0.85em;
             }
 
             @media screen and (min-width: $query__medium) {
-                width: 30%;
-                margin: 0.5em 1.5%;
+                width: calc(100% / 3);
             }
 
             &.sticky {
@@ -65,9 +63,37 @@ $query__medium: 900px;
         }
     }
 
+    /* clear fix */
+    .grid:after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+
     .pagination {
         width: 100%;
         clear: both;
+    }
+
+    /* Effect 4: fall perspective */
+    .grid.effect-4 {
+        perspective: 1300px;
+    }
+
+    .grid.effect-4 li {
+        transform-style: preserve-3d;
+    }
+
+    .grid.effect-4 li.animate {
+        transform: translateZ(400px) translateY(300px) rotateX(-90deg);
+        animation: fallPerspective 0.8s ease-in-out forwards;
+    }
+
+    @keyframes fallPerspective {
+        100% {
+            transform: translateZ(0px) translateY(0px) rotateX(0deg);
+            opacity: 1;
+        }
     }
 }
 
@@ -98,6 +124,7 @@ $query__medium: 900px;
 
 // Breadcrumbs
 #breadcrumbs {
+    padding-left: 0;
     li {
         position: relative;
         margin-right: 0;
@@ -165,21 +192,23 @@ aside.filters {
         }
     }
     ul {
-        padding: 0;
+        display: flex;
+        align-content: center;
+        flex-wrap: wrap;
+        justify-content: space-around;
         margin: 0;
+        padding: 0;
 
         li {
             display: inline;
-            margin-right: 4px;
 
             input[type="checkbox"] {
                 display: none;
             }
             label {
                 background: #f4f4f4;
-                padding: 4px;
-                border-radius: 4px 6px;
-                font-size: 0.9em;
+                padding: 0.5em 1em;
+                font-size: 0.8em;
             }
 
             &.checked {
@@ -188,16 +217,21 @@ aside.filters {
                 }
             }
         }
+
+        &.sort-clear {
+            justify-content: flex-end;
+        }
     }
 
     button {
-        padding-left: 30px;
+        padding: 20px;
+        border-radius: 4px;
         &.clear-all {
-            background: url("images/broom-solid.svg") no-repeat #f4f4f4 4px center;
+            background: url("images/broom-solid.svg") no-repeat #f4f4f4 center center;
             background-size: 20px 20px;
         }
         &.sort {
-            background: url("images/sort-alpha-up-solid.svg") no-repeat #f4f4f4 4px center;
+            background: url("images/sort-alpha-up-solid.svg") no-repeat #f4f4f4 center center;
             background-size: 20px 20px;
         }
     }

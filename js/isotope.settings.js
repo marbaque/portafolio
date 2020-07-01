@@ -1,6 +1,6 @@
-jQuery(document).ready( function($) {
+jQuery(document).ready(function ($) {
 
-    // Grab the .courses container
+    // Grab the .items container
     var $container = $('.grid');
 
     var $courses = $($container).isotope({
@@ -13,15 +13,15 @@ jQuery(document).ready( function($) {
     });
 
     // layout Isotope again after all images have loaded
-    $courses.imagesLoaded( function() {
+    $courses.imagesLoaded(function () {
         $courses.isotope('layout');
     });
 
     // Sort based on various factors
-    $('.sort-clear .sort').on('click', function() {
-        if ( $(this).hasClass('checked')) {
+    $('.sort-clear .sort').on('click', function () {
+        if ($(this).hasClass('checked')) {
             $(this).removeClass('checked');
-            $container.isotope({ sortBy: 'original-order' } );
+            $container.isotope({ sortBy: 'original-order' });
         } else {
             var sortValue = $(this).attr('data-sort-value');
             $container.isotope({ sortBy: sortValue });
@@ -50,7 +50,7 @@ jQuery(document).ready( function($) {
     });
 
     // Clear all checkboxes, remove .checked class from containing list items.
-    $('.sort-clear .clear-all').on( 'click', function() {
+    $('.sort-clear .clear-all').on('click', function () {
         $('.filter-list input:checkbox:checked').removeAttr('checked');
         $container.isotope({ filter: '*' });
         $('.filter-list li:has(input:checkbox:not(:checked))').removeClass('checked');

@@ -50,13 +50,13 @@
             <?php // Add "Clear All" and "Sort alphabetically" buttons. 
             ?>
             <li>
-                <button class="clear-all">
-                    Limpiar todos
+                <button class="clear-all" title="Limpiar todos">
+                <span class="screen-reader-text">Limpiar todos</span>
                 </button>
             </li>
             <li>
-                <button class="sort" data-sort-value="name">
-                    Ordenar alfabéticamente por título
+                <button class="sort" data-sort-value="name" title="Ordenar alfabéticamente por título">
+                    <span class="screen-reader-text">Ordenar alfabéticamente por título</span>
                 </button>
             </li>
         </ul>

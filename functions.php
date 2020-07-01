@@ -71,9 +71,12 @@ function prefix_disable_gutenberg($current_status, $post_type)
 function isotopeinwp_scripts()
 {
     if (is_home() || is_archive()) {
-        wp_register_script('imagesloaded', get_theme_file_uri('/JS/libs/imagesloaded.pkgd.min.js'), array('jquery'), '4.1.1', true);
-        wp_register_script('isotope', get_theme_file_uri('/JS/libs/isotope.pkgd.min.js'), array('imagesloaded'), '3.0.1', true);
-        wp_enqueue_script('isotopeinwp-settings', get_theme_file_uri('/JS/isotope.settings.js'), array('isotope'), '1.0', true);
+        
+        wp_register_script('imagesloaded', get_theme_file_uri('/js/libs/imagesloaded.pkgd.min.js'), array('jquery'), '4.1.4', true);
+        
+        wp_register_script('isotope', get_theme_file_uri('/js/libs/isotope.pkgd.min.js'), array('imagesloaded'), '3.0.6', true);
+        
+        wp_enqueue_script('isotopeinwp-settings', get_theme_file_uri('/js/isotope.settings.js'), array('isotope'), '1.0', true);
     }
 }
 
