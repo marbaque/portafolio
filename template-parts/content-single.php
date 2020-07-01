@@ -12,13 +12,13 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php
-	if (has_post_thumbnail()) { ?>
+	if (has_post_thumbnail()) : ?>
 		<figure class="featured-image full-bleed">
 			<?php
 			the_post_thumbnail('pemscores-full-bleed');
 			?>
 		</figure><!-- .featured-image full-bleed -->
-	<?php } ?>
+	<?php endif; ?>
 
 	<?php 
 		if ( function_exists( 'pemscores_breadcrumbs' ) ) {

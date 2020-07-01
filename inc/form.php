@@ -19,7 +19,7 @@ function my_acf_form_init()
             'field_groups' => array('group_5ef1515c035ad'), // Create post field group ID(s)
             'form' => true,
             'instruction_placement' => 'field',
-            'return' => '/item-pendiente', // Redirect to new post url
+            'return' => home_url(), // Redirect to new post url
             'html_before_fields' => '',
             'html_after_fields' => '',
             //'uploader' => 'basic',
@@ -64,3 +64,48 @@ function wd_post_content_acf_name($field)
     return $field;
 }
 add_filter('acf/load_field/name=_post_content', 'wd_post_content_acf_name');
+
+
+/* 
+    Enviar correo a estudiante y a profesor 
+    cuando se guarda el post 
+*/
+
+add_action('acf/save_post', 'my_save_post');
+
+function my_save_post($post_id)
+{
+
+    // bail early if not a contact_form post
+    // if (get_post_type($post_id) !== 'contact_form') {
+
+    //     return;
+    // }
+
+
+    // bail early if editing in admin
+    if (is_admin()) {
+
+        return;
+    }
+
+
+    // vars
+    $post = get_post($post_id);
+
+
+    // get custom fields (field group exists for content_form)
+    $name = get_field('pf_nombre', $post_id);
+    $email = get_field('pf_correo', $post_id);
+
+
+    // email data
+    $to = 'sis_ecen@uned.ac.cr';
+    $headers = 'From: ' . $name . ' <' . $email . '>' . "\r\n";
+    $subject = $post->post_title;
+    $body = $post->post_content;
+
+
+    // send email
+    wp_mail($to, $subject, $body, $headers);
+}

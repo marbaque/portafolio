@@ -71,24 +71,6 @@
             "multiple": 0
         },
         {
-            "key": "field_5ef23d61c7f0a",
-            "label": "Ubicación",
-            "name": "pf_ubicacion",
-            "type": "google_map",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "100",
-                "class": "",
-                "id": ""
-            },
-            "center_lat": "",
-            "center_lng": "",
-            "zoom": "",
-            "height": ""
-        },
-        {
             "key": "field_5ef23e00696ab",
             "label": "Archivo PDF",
             "name": "pf_pdf",
@@ -186,7 +168,7 @@
             {
                 "param": "user_form",
                 "operator": "==",
-                "value": "add"
+                "value": "edit"
             }
         ],
         [
@@ -211,5 +193,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1593096417
+    "modified": 1593555070
 }

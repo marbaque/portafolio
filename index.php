@@ -14,7 +14,15 @@
 
 get_header(); ?>
 
-<?php if ( have_posts() ) : ?>
+<?php 
+// the query
+$pf_all_query = new WP_Query(array(
+	'post_type'=>'post', 
+	'post_status'=>'publish', 
+	'posts_per_page'=>-1,
+)); 
+?>
+<?php if ( $pf_all_query->have_posts() ) : ?>
 
 	<div id="primary" class="portafolios-area">
 		<main id="main" class="site-main" role="main">
@@ -39,55 +47,27 @@ get_header(); ?>
 
 			<div class="grid">
 
-				<?php  while ( have_posts() ) : the_post(); ?>
-
+			
+			
+			
+				
+				<?php while ( $pf_all_query->have_posts() ) : $pf_all_query->the_post(); ?>
+					<div class="grid-sizer"></div>
 					<div class="grid-item">
 						<?php get_template_part( 'template-parts/content', get_post_format() ); ?>
 					</div>
+					<?php wp_reset_postdata(); ?>
 					
 
 				<?php endwhile;
+				
 
-				the_posts_pagination( array(
-					'prev_text' => pemscores_get_svg( array( 'icon' => 'arrow-long-left', 'fallback' => true ) ) . __( 'Recientes', 'pemscores' ),
-					'next_text' => __( 'Anteriores', 'pemscores' ) . pemscores_get_svg( array( 'icon' => 'arrow-long-right' , 'fallback' => true ) ),
-					'before_page_number' => '<span class="screen-reader-text">' . __( 'Página ', 'pemscores' ) . '</span>',
-				));
+			endif; ?>
 
-			?>
 			</div>
 			
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
-<?php
-//get_sidebar();
-get_footer();
-
-
-else :
-
-	get_template_part( 'template-parts/content', 'none' );
-	return;
-
-endif;
-?>
-
-<script>
-	var elem = document.querySelector('.grid');
-	var msnry = new Masonry( elem, {
-	// options
-	percentPosition: true,
-	columnWidth: '.grid-sizer',
-	itemSelector: '.grid-item',
-	transitionDuration: '0.8s',
-	stagger: 30,
-	});
-
-	// element argument can be a selector string
-	//   for an individual element
-	var msnry = new Masonry( '.grid', {
-	// options
-	});
-</script>
+<?php get_footer(); ?>
