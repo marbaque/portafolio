@@ -27,25 +27,34 @@
     width: 100%; }
   .portafolios-area .grid {
     width: 100%;
-    margin: 0 auto; }
+    margin: 0 auto;
+    text-align: center; }
     .portafolios-area .grid .post,
     .portafolios-area .grid .grid-sizer {
-      margin: 0 auto;
-      text-align: center;
-      float: left; }
+      width: 100%;
+      height: auto;
+      margin: 0.5em 0; }
       @media screen and (min-width: 600px) {
         .portafolios-area .grid .post,
         .portafolios-area .grid .grid-sizer {
-          width: calc(100% / 2);
-          height: auto;
-          font-size: 0.85em; } }
+          width: 48%;
+          font-size: 0.85em;
+          margin: 0.5em 1%; } }
       @media screen and (min-width: 900px) {
         .portafolios-area .grid .post,
         .portafolios-area .grid .grid-sizer {
-          width: calc(100% / 3); } }
-      .portafolios-area .grid .post.sticky,
-      .portafolios-area .grid .grid-sizer.sticky {
-        background-color: #ebeef4; }
+          width: 30%;
+          margin: 0.75em 1.5%; } }
+    .portafolios-area .grid .post {
+      transition: 0.1s all;
+      text-align: center;
+      float: left; }
+      .portafolios-area .grid .post:hover {
+        background-color: #f4f4f4; }
+        .portafolios-area .grid .post:hover img {
+          opacity: 0.8; }
+      .portafolios-area .grid .post:active {
+        border: 2px solid rgba(0, 0, 0, 0.2); }
   .portafolios-area .grid:after {
     content: "";
     display: block;
@@ -79,31 +88,6 @@
 .acf-form .description {
   font-size: 0.8em; }
 
-#breadcrumbs {
-  padding-left: 0; }
-  #breadcrumbs li {
-    position: relative;
-    margin-right: 0; }
-    #breadcrumbs li a,
-    #breadcrumbs li .current-item {
-      display: block;
-      text-decoration: none;
-      background-color: #f4f4f4;
-      padding: 0.25em 0.75em 0.25em 1.5em; }
-    #breadcrumbs li a:after {
-      background-color: white;
-      clip-path: polygon(0 0, 50% 0, 100% 50%, 50% 100%, 0 100%, 50% 50%);
-      display: block;
-      content: "";
-      width: 12px;
-      height: 100%;
-      position: absolute;
-      top: 0;
-      right: -12px;
-      z-index: 99; }
-  #breadcrumbs .separator {
-    display: none; }
-
 .single #breadcrumbs {
   font-size: 80%;
   margin-bottom: 2em; }
@@ -125,10 +109,7 @@ aside.filters .widget {
   aside.filters .widget.categories {
     font-size: 1em; }
 aside.filters ul {
-  display: flex;
-  align-content: center;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  text-align: center;
   margin: 0;
   padding: 0; }
   aside.filters ul li {

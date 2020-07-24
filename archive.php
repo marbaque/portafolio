@@ -1,6 +1,6 @@
-<?php get_header(); ?>
+<? get_header(); ?>
 
-<?php
+<?
 // the query
 $pf_all_query = new WP_Query(array(
 	'post_type' => 'post',
@@ -8,37 +8,38 @@ $pf_all_query = new WP_Query(array(
 	'posts_per_page' => -1,
 ));
 ?>
-<?php if ($pf_all_query->have_posts()) : ?>
+<? if ($pf_all_query->have_posts()) : ?>
 
 	<div id="primary" class="portafolios-area">
 		<main id="main" class="site-main" role="main">
 
-			<?php
+			<?
 			if (function_exists('pemscores_breadcrumbs')) {
 				pemscores_breadcrumbs();
 			}
 			?>
 
-			<?php if (is_home() && !is_front_page()) : ?>
+			<? if (is_home() && !is_front_page()) : ?>
 				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
+					<h1 class="page-title screen-reader-text"><? single_post_title(); ?></h1>
 				</header>
-			<?php else : ?>
+			<? else : ?>
 				<header>
 					<h1 class="page-title screen-reader-text">
-					<?php the_title(); ?>
+					<? the_title(); ?>
 					</h1>
 				</header>
-			<?php endif; ?>
+			<? endif; ?>
 
 			<div class="grid">
-				<?php while ($pf_all_query->have_posts()) : $pf_all_query->the_post(); ?>
+				<? while ( have_posts() ) : the_post(); ?>
+					
 					<div class="grid-sizer"></div>
-						<?php get_template_part('template-parts/content', get_post_format()); ?>
-					<?php wp_reset_postdata(); ?>
+						<? get_template_part( 'template-parts/content', get_post_format() ); ?>
+					<? wp_reset_postdata(); ?>
 
 
-			<?php endwhile;
+				<? endwhile;
 
 
 			endif; ?>
@@ -49,4 +50,4 @@ $pf_all_query = new WP_Query(array(
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
-	<?php get_footer(); ?>
+	<? get_footer(); ?>

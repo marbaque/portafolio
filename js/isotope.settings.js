@@ -7,6 +7,9 @@ jQuery(document).ready(function ($) {
         // options
         itemSelector: '.post',
         layoutMode: 'masonry',
+        percentPosition: true,
+        columnWidth: '.grid-sizer',
+        transitionDuration: '0.2s',
         getSortData: {
             name: "h2"
         }

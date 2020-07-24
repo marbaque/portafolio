@@ -24,27 +24,6 @@
         </ul>
     </section><!-- .filter .widget -->
 
-    <section class="widget tags">
-        <ul class='filter-list' data-group='subject'>
-            <?php
-            $terms = get_terms(array(
-                'taxonomy' => 'post_tag',
-                'hide_empty' => false,
-            ));
-            if (!empty($terms) && !is_wp_error($terms)) {
-                foreach ($terms as $term) {
-            ?>
-                    <li>
-                        <input type='checkbox' value='.<?php echo $term->slug; ?>' id='<?php echo $term->slug; ?>'>
-                        <label for='<?php echo $term->slug; ?>'><?php echo $term->name; ?></label>
-                    </li>
-            <?php
-                }
-            }
-            ?>
-        </ul>
-    </section><!-- .filter .widget -->
-
     <section class="widget botones">
         <ul class="sort-clear">
             <?php // Add "Clear All" and "Sort alphabetically" buttons. 

@@ -44,20 +44,5 @@
 			<?php the_excerpt(); ?>
 		</div><!-- .entry-content -->
 
-		<div class="continue-reading">
-			<?php
-			$read_more_link = sprintf(
-				/* translators: %s: Name of current post. */
-				wp_kses( __( 'Ver más %s', 'pemscores' ), array( 'span' => array( 'class' => array() ) ) ) .
-				pemscores_get_svg( array( 'icon' => 'arrow-right' ) ),
-				the_title( '<span class="screen-reader-text">"', '"</span>', false )
-			);
-			?>
-
-			<a href="<?php echo esc_url( get_permalink() ) ?>" rel="bookmark">
-				<?php echo $read_more_link; ?>
-			</a>
-		</div><!-- .continue-reading -->
-
 	</div><!-- .post__content -->
 </article><!-- #post-## -->
