@@ -54,7 +54,6 @@ $pf_all_query = new WP_Query(array(
 						<?php get_template_part('template-parts/content', get_post_format()); ?>
 					<?php wp_reset_postdata(); ?>
 
-
 			<?php endwhile;
 
 

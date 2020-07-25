@@ -30,7 +30,7 @@ $pf_all_query = new WP_Query(array(
 					</h1>
 				</header>
 			<? endif; ?>
-
+				
 			<div class="grid">
 				<? while ( have_posts() ) : the_post(); ?>
 					

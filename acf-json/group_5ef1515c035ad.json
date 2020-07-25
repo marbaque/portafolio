@@ -3,16 +3,51 @@
     "title": "Datos del ítem",
     "fields": [
         {
+            "key": "field_5f1b80e7be6fe",
+            "label": "Opción de portada",
+            "name": "pf_opcion",
+            "type": "button_group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "card",
+                "id": ""
+            },
+            "choices": {
+                "imagen": "imagen",
+                "video": "video"
+            },
+            "allow_null": 0,
+            "default_value": "imagen",
+            "layout": "horizontal",
+            "return_format": "value"
+        },
+        {
             "key": "field_5ef152305cb6d",
             "label": "Imagen para portada",
             "name": "pf_portada",
             "type": "image",
             "instructions": "Comparta una imagen descriptiva de su proyecto. Puede compartir la imagen arrastrando su ícono sobre la ventana que se despliega al hacer clic en \"Seleccionar imagen\". Los archivos grandes JPG, PNG (de ancho superior a 1000px) funcionan mejor.",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5f1b80e7be6fe",
+                        "operator": "==",
+                        "value": "imagen"
+                    },
+                    {
+                        "field": "field_5f1b80e7be6fe",
+                        "operator": "!=",
+                        "value": "video"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
-                "class": "upload",
+                "class": "card",
                 "id": ""
             },
             "return_format": "id",
@@ -27,6 +62,35 @@
             "mime_types": ""
         },
         {
+            "key": "field_5f1b7f74c69e6",
+            "label": "Video de portada",
+            "name": "pf_video",
+            "type": "oembed",
+            "instructions": "Agregue el enlace del video o medio que desea mostrar en la portada.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5f1b80e7be6fe",
+                        "operator": "==",
+                        "value": "video"
+                    },
+                    {
+                        "field": "field_5f1b80e7be6fe",
+                        "operator": "!=",
+                        "value": "imagen"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "card",
+                "id": ""
+            },
+            "width": 720,
+            "height": 480
+        },
+        {
             "key": "field_5ef1646467d30",
             "label": "Categorías",
             "name": "pf_cateorias",
@@ -35,8 +99,8 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "50",
-                "class": "",
+                "width": "48",
+                "class": "card",
                 "id": ""
             },
             "taxonomy": "category",
@@ -57,8 +121,8 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "50",
-                "class": "",
+                "width": "48",
+                "class": "card",
                 "id": ""
             },
             "taxonomy": "post_tag",
@@ -80,7 +144,7 @@
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
-                "class": "upload",
+                "class": "card",
                 "id": ""
             },
             "return_format": "id",
@@ -88,25 +152,6 @@
             "min_size": "",
             "max_size": 10,
             "mime_types": "pdf"
-        },
-        {
-            "key": "field_5ef285ab27601",
-            "label": "Notas adicionales",
-            "name": "pf_notas",
-            "type": "textarea",
-            "instructions": "Aquí puede añadir cualquier nota o pregunta dirigida al admistrador del sitio; esta sección no será parte de la publicación.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "100",
-                "class": "pf_notas",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "maxlength": "",
-            "rows": 5,
-            "new_lines": ""
         },
         {
             "key": "field_5ef2841264b13",
@@ -134,8 +179,8 @@
             "required": 1,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "50",
-                "class": "",
+                "width": "48",
+                "class": "card",
                 "id": ""
             },
             "default_value": "Anónima",
@@ -153,14 +198,71 @@
             "required": 1,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "50",
-                "class": "pf_email",
+                "width": "48",
+                "class": "card",
                 "id": ""
             },
             "default_value": "",
             "placeholder": "",
             "prepend": "",
             "append": ""
+        },
+        {
+            "key": "field_5f1b5438a19b2",
+            "label": "Conclusiones",
+            "name": "pf_conclusiones",
+            "type": "wysiwyg",
+            "instructions": "Este campo es opcional. Agregue las conclusiones de su relato.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "card",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "visual",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 1
+        },
+        {
+            "key": "field_5ef285ab27601",
+            "label": "Notas adicionales",
+            "name": "pf_notas",
+            "type": "textarea",
+            "instructions": "Aquí puede añadir cualquier nota o pregunta dirigida al admistrador del sitio; esta sección no será parte de la publicación.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "card",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 5,
+            "new_lines": ""
+        },
+        {
+            "key": "field_5f1b77d96139b",
+            "label": "Contraseña",
+            "name": "pf_pass",
+            "type": "text",
+            "instructions": "Escriba la contraseña indicada por el formador para poder publicar este contenido.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "card",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": 10
         }
     ],
     "location": [
@@ -193,5 +295,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1593555070
+    "modified": 1595638739
 }

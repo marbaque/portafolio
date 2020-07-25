@@ -19,7 +19,7 @@ function my_acf_form_init()
             'field_groups' => array('group_5ef1515c035ad'), // Create post field group ID(s)
             'form' => true,
             'instruction_placement' => 'field',
-            'return' => home_url(), // Redirect to new post url
+            //'return' => home_url(), // Redirect to new post url
             'html_before_fields' => '',
             'html_after_fields' => '',
             //'uploader' => 'basic',
@@ -72,7 +72,6 @@ add_filter('acf/load_field/name=_post_content', 'wd_post_content_acf_name');
 */
 
 add_action('acf/save_post', 'my_save_post');
-
 function my_save_post($post_id)
 {
 
@@ -108,4 +107,18 @@ function my_save_post($post_id)
 
     // send email
     wp_mail($to, $subject, $body, $headers);
+}
+
+// Validar formulario con la contraseña
+add_filter('acf/validate_value/name=pf_pass', 'my_acf_validate_value', 9, 4);
+function my_acf_validate_value( $valid, $value, $field, $input ){
+    $keyPP = 'PLANTA02X';
+    
+    if( !$valid ) {
+		return $valid;
+	}
+	if ( ($_POST['pf_pass']) !== $keyPP ) {
+		$valid = 'Contraseña inválida';
+	}
+	return $valid;
 }

@@ -6,6 +6,8 @@
  */
 ?>
 <aside id='secondary' class='filters' role='complementary'>
+    <h2 align="center">Ver ítems:</h2>
+    
     <section class="widget categories">
         <ul class='filter-list' data-group='subject'>
             <?php
