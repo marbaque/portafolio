@@ -5,7 +5,7 @@
  Author:       Mario Badilla
  Author URI:   http://multimedia.uned.ac.cr
  Template:     pemscores
- Version:      1.8.1
+ Version:      1.9
  License:      MIT License
  License URI:  http://www.gnu.org/licenses/gpl-2.0.html
  Tags:         masonry, education, spanish
@@ -233,5 +233,11 @@ aside.filters {
         @media screen and (min-width:$query__medium){
             padding: 2em!important;
         }
+    }
+
+    .acf-field--post-title,
+    .acf-field--post-content {
+        @extend .card;
+
     }
 }

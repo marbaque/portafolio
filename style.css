@@ -142,12 +142,14 @@ aside.filters button {
 .acf-form .description {
   font-size: 0.8em;
   padding: 0; }
-.acf-form .card {
+.acf-form .card, .acf-form .acf-field--post-title,
+.acf-form .acf-field--post-content {
   padding: 1em !important;
   background-color: #f4f4f4;
   margin: 0.5em 1% !important; }
   @media screen and (min-width: 900px) {
-    .acf-form .card {
+    .acf-form .card, .acf-form .acf-field--post-title,
+    .acf-form .acf-field--post-content {
       padding: 2em !important; } }
 
 /*# sourceMappingURL=style.css.map */

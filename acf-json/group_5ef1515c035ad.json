@@ -3,6 +3,25 @@
     "title": "Datos del ítem",
     "fields": [
         {
+            "key": "field_5f1b5438a19b2",
+            "label": "Conclusiones",
+            "name": "pf_conclusiones",
+            "type": "wysiwyg",
+            "instructions": "Este campo es opcional. Agregue las conclusiones de su relato.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "card",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "visual",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 1
+        },
+        {
             "key": "field_5f1b80e7be6fe",
             "label": "Opción de portada",
             "name": "pf_opcion",
@@ -208,25 +227,6 @@
             "append": ""
         },
         {
-            "key": "field_5f1b5438a19b2",
-            "label": "Conclusiones",
-            "name": "pf_conclusiones",
-            "type": "wysiwyg",
-            "instructions": "Este campo es opcional. Agregue las conclusiones de su relato.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "card",
-                "id": ""
-            },
-            "default_value": "",
-            "tabs": "visual",
-            "toolbar": "basic",
-            "media_upload": 0,
-            "delay": 1
-        },
-        {
             "key": "field_5ef285ab27601",
             "label": "Notas adicionales",
             "name": "pf_notas",
@@ -246,23 +246,23 @@
             "new_lines": ""
         },
         {
-            "key": "field_5f1b77d96139b",
-            "label": "Contraseña",
-            "name": "pf_pass",
-            "type": "text",
-            "instructions": "Escriba la contraseña indicada por el formador para poder publicar este contenido.",
+            "key": "field_5f20a9d7908b6",
+            "label": "Términos y condiciones",
+            "name": "pf_tyc",
+            "type": "true_false",
+            "instructions": "Antes de enviar su contenido apruebe las condiciones de uso de este sitio.",
             "required": 1,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "50",
+                "width": "",
                 "class": "card",
                 "id": ""
             },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": 10
+            "message": "Doy mi consentimiento de publicar el contenido.",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "Sí",
+            "ui_off_text": ""
         }
     ],
     "location": [
@@ -295,5 +295,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1595638739
+    "modified": 1595981515
 }

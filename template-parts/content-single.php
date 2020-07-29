@@ -20,6 +20,12 @@
 		</figure><!-- .featured-image full-bleed -->
 	<?php endif; ?>
 
+	<?php
+	if (function_exists('pemscores_breadcrumbs')) {
+		pemscores_breadcrumbs();
+	}
+	?>
+
 	<header class="entry-header">
 		<?php pemscores_the_category_list(); ?>
 
@@ -67,6 +73,7 @@
 				comments_template();
 			endif;
 			?>
-		 </div><!--post-content__wrap -->
+		</div>
+		<!--post-content__wrap -->
 	</section><!-- .post-content -->
 </article><!-- #post-## -->
