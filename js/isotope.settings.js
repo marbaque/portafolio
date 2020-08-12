@@ -3,7 +3,7 @@ jQuery(document).ready(function ($) {
     // Grab the .items container
     var $container = $('.grid');
 
-    var $courses = $($container).isotope({
+    var $pfItems = $($container).isotope({
         // options
         itemSelector: '.post',
         layoutMode: 'masonry',
@@ -16,8 +16,8 @@ jQuery(document).ready(function ($) {
     });
 
     // layout Isotope again after all images have loaded
-    $courses.imagesLoaded(function () {
-        $courses.isotope('layout');
+    $pfItems.imagesLoaded(function () {
+        $pfItems.isotope('layout');
     });
 
     // Sort based on various factors

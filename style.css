@@ -5,7 +5,7 @@
  Author:       Mario Badilla
  Author URI:   http://multimedia.uned.ac.cr
  Template:     pemscores
- Version:      1.9
+ Version:      1.9.1
  License:      MIT License
  License URI:  http://www.gnu.org/licenses/gpl-2.0.html
  Tags:         masonry, education, spanish
@@ -27,8 +27,7 @@
     width: 100%; }
   .portafolios-area .grid {
     width: 100%;
-    margin: 0 auto;
-    text-align: center; }
+    margin: 0 auto; }
     .portafolios-area .grid .post,
     .portafolios-area .grid .grid-sizer {
       width: 100%;
@@ -47,7 +46,6 @@
           margin: 0.75em 1.5%; } }
     .portafolios-area .grid .post {
       transition: 0.1s all;
-      text-align: center;
       float: left; }
       .portafolios-area .grid .post .entry-header {
         margin-top: 2em; }
@@ -55,10 +53,6 @@
           font-size: 1.75em; }
       .portafolios-area .grid .post:hover {
         background-color: #f4f4f4; }
-        .portafolios-area .grid .post:hover img {
-          opacity: 0.8; }
-      .portafolios-area .grid .post:active {
-        border: 2px solid rgba(0, 0, 0, 0.2); }
   .portafolios-area .grid:after {
     content: "";
     display: block;
@@ -86,8 +80,6 @@
   width: 100%;
   max-width: 900px;
   margin: 1em auto; }
-.single .entry-header {
-  text-align: center; }
 .single .post-content {
   width: 100% !important;
   max-width: 900px;
@@ -97,10 +89,9 @@
 
 aside.filters h2 {
   font-size: 1.25em; }
-aside.filters .widget {
-  margin-bottom: 0.5em; }
-  aside.filters .widget.categories {
-    font-size: 1em; }
+aside.filters .cat-links {
+  margin-bottom: 0.5em;
+  font-size: 1em; }
 aside.filters ul {
   text-align: center;
   margin: 0;

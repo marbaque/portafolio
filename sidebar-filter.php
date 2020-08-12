@@ -5,10 +5,8 @@
  * Muestra filtros de isotope
  */
 ?>
-<aside id='secondary' class='filters' role='complementary'>
-    <h2 align="center">Ver ítems:</h2>
-    
-    <section class="widget categories">
+<aside id='secondary' class='filters' role='complementary'>   
+    <section class="cat-links">
         <ul class='filter-list' data-group='subject'>
             <?php
             $cats = get_categories();
@@ -26,7 +24,7 @@
         </ul>
     </section><!-- .filter .widget -->
 
-    <section class="widget botones">
+    <section class="botones">
         <ul class="sort-clear">
             <?php // Add "Clear All" and "Sort alphabetically" buttons. 
             ?>

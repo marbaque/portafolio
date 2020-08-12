@@ -20,7 +20,7 @@ get_header(); ?>
 $pf_all_query = new WP_Query(array(
 	'post_type' => 'post',
 	'post_status' => 'publish',
-	'posts_per_page' => -1,
+	'posts_per_page' => -1
 ));
 ?>
 <?php if ($pf_all_query->have_posts()) : ?>
@@ -41,7 +41,7 @@ $pf_all_query = new WP_Query(array(
 			<?php else : ?>
 				<header>
 					<h1 class="page-title screen-reader-text">
-					<?php the_title(); ?>
+						<?php the_title(); ?>
 					</h1>
 				</header>
 			<?php endif; ?>
@@ -51,7 +51,7 @@ $pf_all_query = new WP_Query(array(
 			<div class="grid">
 				<?php while ($pf_all_query->have_posts()) : $pf_all_query->the_post(); ?>
 					<div class="grid-sizer"></div>
-						<?php get_template_part('template-parts/content', get_post_format()); ?>
+					<?php get_template_part('template-parts/content', get_post_format()); ?>
 					<?php wp_reset_postdata(); ?>
 
 			<?php endwhile;
@@ -60,7 +60,6 @@ $pf_all_query = new WP_Query(array(
 			endif; ?>
 
 			</div>
-
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
