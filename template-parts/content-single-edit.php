@@ -19,7 +19,7 @@
 	?>
 
 	<?php while (have_posts()) : the_post(); ?>
-		<?php acf_form(); ?>
+		<?php acf_form('new-portafolio'); ?>
 	<?php endwhile; ?>
 
 

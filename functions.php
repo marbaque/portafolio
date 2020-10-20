@@ -1,5 +1,6 @@
 <?php
 
+// Cargar estilos del tema principal y del hijo
 add_action('wp_enqueue_scripts', 'my_theme_enqueue_styles');
 
 function my_theme_enqueue_styles()
@@ -19,7 +20,7 @@ function my_theme_enqueue_styles()
     );
 }
 
-// Guardar campos en el tema
+// Guardar campos ACF en el tema en forma de Json
 add_filter('acf/settings/load_json', 'my_acf_json_load_point');
 
 function my_acf_json_load_point($paths)
@@ -109,6 +110,11 @@ function portafolios_post_class($classes)
 }
 
 
+// Google maps API - Method 2: Setting.
+function my_acf_init() {
+    acf_update_setting('google_api_key', 'AIzaSyDpHSO8Qfwp6ku-86bkaC9bPMZkbr6U2DA');
+}
+add_action('acf/init', 'my_acf_init');
 
 /*
  *   Funciones para modificar Posts por defecto.

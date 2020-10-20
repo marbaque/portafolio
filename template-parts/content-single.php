@@ -12,7 +12,15 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php
-	if (has_post_thumbnail()) : ?>
+	// Load value
+	$video = get_field('pf_video');
+
+	if ($video) : ?>
+		<div class="embed-container featured-image full-bleed">
+			<?php the_field('pf_video'); ?>
+		</div>
+
+	<?php elseif (has_post_thumbnail()) : ?>
 		<figure class="featured-image full-bleed">
 			<?php
 			the_post_thumbnail('pemscores-full-bleed');
@@ -46,20 +54,46 @@
 		<div class="post-content__wrap">
 
 
+			<?php if (have_rows('pf_contenidos')) : ?>
+				<aside class="item-sidebar">
+					<ul class="menu-secciones">
+						<?php while (have_rows('pf_contenidos')) : the_row();
+							$secTitle = get_sub_field('seccion_title');
+						?>
+							<li><a href="#title_<?php echo get_row_index(); ?>"><?php echo $secTitle; ?></a></li>
+						<?php endwhile; ?>
+					</ul>
+				</aside>
+			<?php endif; ?>
 
-			<div class="entry-content">
-				<?php
-				the_content(sprintf(
-					/* translators: %s: Name of current post. */
-					wp_kses(__('Continuar leyendo %s <span class="meta-nav">&rarr;</span>', 'pemscores'), array('span' => array('class' => array()))),
-					the_title('<span class="screen-reader-text">"', '"</span>', false)
-				));
 
-				wp_link_pages(array(
-					'before' => '<div class="page-links">' . esc_html__('Páginas:', 'pemscores'),
-					'after'  => '</div>',
-				));
-				?>
+			<div class="entry-content post-content">
+				<?php if (have_rows('pf_contenidos')) : ?>
+					<div class="secciones">
+						<?php while (have_rows('pf_contenidos')) : the_row();
+							$secTitle = get_sub_field('seccion_title');
+							$secCont = get_sub_field('pf_seccion');
+						?>
+							<div class="seccion">
+								<h3 id="title_<?php echo get_row_index(); ?>"><?php echo $secTitle; ?></h3>
+								<?php echo $secCont; ?>
+							</div>
+						<?php endwhile; ?>
+					</div>
+				<?php else : ?>
+					<?php
+					the_content(sprintf(
+						/* translators: %s: Name of current post. */
+						wp_kses(__('Continuar leyendo %s <span class="meta-nav">&rarr;</span>', 'pemscores'), array('span' => array('class' => array()))),
+						the_title('<span class="screen-reader-text">"', '"</span>', false)
+					));
+
+					wp_link_pages(array(
+						'before' => '<div class="page-links">' . esc_html__('Páginas:', 'pemscores'),
+						'after'  => '</div>',
+					));
+					?>
+				<?php endif; ?>
 			</div><!-- .entry-content -->
 
 			<footer class="entry-footer">

@@ -53,6 +53,11 @@
           font-size: 1.75em; }
       .portafolios-area .grid .post:hover {
         background-color: #f4f4f4; }
+      .portafolios-area .grid .post figure {
+        max-height: 220px;
+        overflow: hidden; }
+        .portafolios-area .grid .post figure img {
+          object-fit: cover; }
   .portafolios-area .grid:after {
     content: "";
     display: block;
@@ -128,6 +133,8 @@ aside.filters button {
     background: url("images/sort-alpha-up-solid.svg") no-repeat #f4f4f4 center center;
     background-size: 20px 20px; }
 
+.acf-form .acf-tab-wrap {
+  margin-top: 2em !important; }
 .acf-form .info {
   margin: 2em 0; }
 .acf-form .description {
@@ -142,5 +149,35 @@ aside.filters button {
     .acf-form .card, .acf-form .acf-field--post-title,
     .acf-form .acf-field--post-content {
       padding: 2em !important; } }
+.acf-form .input[placeholder] {
+  color: currentColor !important; }
+.acf-form .acf-form-submit {
+  margin-top: 4em; }
+
+.migajas ul li:first-child {
+  border-top-left-radius: 0.5em;
+  border-bottom-left-radius: 0.5em; }
+.migajas ul li:last-child {
+  border-bottom-right-radius: 0.5em;
+  border-top-right-radius: 0.5em; }
+.migajas ul a {
+  text-decoration: none;
+  font-weight: 700; }
+
+.embed-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  overflow: hidden;
+  height: auto; }
+
+.embed-container iframe,
+.embed-container object,
+.embed-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto; }
 
 /*# sourceMappingURL=style.css.map */
