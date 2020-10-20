@@ -180,4 +180,10 @@ aside.filters button {
   height: 100%;
   margin: 0 auto; }
 
+.boton-editar {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 99; }
+
 /*# sourceMappingURL=style.css.map */

@@ -158,10 +158,10 @@
                         "id": ""
                     },
                     "default_value": "",
-                    "tabs": "all",
-                    "toolbar": "basic",
+                    "tabs": "visual",
+                    "toolbar": "full",
                     "media_upload": 1,
-                    "delay": 1
+                    "delay": 0
                 }
             ]
         },
@@ -385,5 +385,5 @@
     ],
     "active": true,
     "description": "",
-    "modified": 1603152467
+    "modified": 1603214977
 }

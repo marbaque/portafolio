@@ -80,10 +80,10 @@ function my_save_post($post_id)
     }
 
     // bail early if editing in admin
-    if (is_admin()) {
+    // if (is_admin()) {
 
-        return;
-    }
+    //     return;
+    // }
 
 
     // vars
