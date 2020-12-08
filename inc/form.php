@@ -24,7 +24,7 @@ function my_acf_form_init()
             //'html_before_fields' => '',
             //'html_after_fields' => '',
             'uploader' => 'wp',
-            'submit_value' => __("Crear mi portafolio", 'portafolios'),
+            'submit_value' => __("Crear mi página", 'portafolios'),
             'updated_message' => __("Ítem del portafolio creado. ¡Muchas gracias!", 'portafolios'),
         ));
     }

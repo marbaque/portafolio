@@ -47,13 +47,13 @@ $query__medium: 900px;
             height: auto;
             margin: 0.5em 0;
 
-            @media screen and (min-width: $query__small) {
+            @media screen and(min-width: $query__small) {
                 width: 48%;
                 font-size: 0.85em;
                 margin: 0.5em 1%;
             }
 
-            @media screen and (min-width: $query__medium) {
+            @media screen and(min-width: $query__medium) {
                 width: 30%;
                 margin: 0.75em 1.5%;
             }
@@ -73,7 +73,7 @@ $query__medium: 900px;
             &:hover {
                 background-color: #f4f4f4;
             }
-            
+
             figure {
                 max-height: 220px;
                 overflow: hidden;
@@ -121,25 +121,115 @@ $query__medium: 900px;
 
 // Single post - item
 .single {
-    #breadcrumbs {
+    .migajas {
         font-size: 80%;
+        margin-bottom: 0;
     }
     .hentry {
         width: 100%;
     }
     .entry-header,
-    #breadcrumbs {
+    .migajas {
         width: 100%;
-        max-width: $query__medium;
+        // max-width: $query__medium;
         margin: 1em auto;
     }
     .post-content {
         width: 100% !important;
-        max-width: $query__medium;
+        // max-width: $query__medium;
         margin: 0 auto;
 
         .entry-content {
             padding: 0;
+        }
+
+        .item-sidebar {
+
+            .widget {
+                background: #f4f4f4;
+                border-radius: 0.5rem;
+                padding: 0.5em 1em 1em;
+                z-index: 99;
+
+                &.widget-map {
+                    margin-bottom: 0;
+                }
+
+                .menu-title {
+                    font-size: 1.25em;
+
+                    &:before {
+                        content: "";
+                        display: inline-block;
+                        width: 1em;
+                        height: 1em;
+                        background: url('images/leaf-oak-duotone.svg') no-repeat;
+                        background-size: contain;
+                        margin-bottom: -0.2em;
+                        margin-right: 0.25em;
+
+                    }
+                    &.map {
+                        &:before {
+                            background: url('images/map-marked-alt-light.svg') no-repeat;
+                        }
+                    }
+                }
+
+                ul {
+                    list-style: none;
+                    margin: 0;
+                    font-size: 0.9em;
+
+
+                    li {
+                        margin-bottom: 0.75em;
+                        line-height: 1.25;
+                        a {
+                            text-decoration: none;
+                        }
+                    }
+                }
+            }
+
+
+        }
+
+        @media screen and(min-width: $query__medium) {
+            .post-content__wrap {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                margin-top: 1em;
+
+                .item-sidebar {
+                    flex: 0 1 25%;
+                    
+                    .sticky-things {
+                        position: sticky;
+                        top: 80px;
+                    }
+                }
+
+                .post-content {
+                    flex: 0 1 70%;
+                }
+
+                .comments-area {
+                    flex: 1 0 100%;
+                }
+            }
+        }
+    }
+    // Comentarios
+    .comments-area {
+        background: #f4f4f4;
+        padding: 1em;
+        border-top: 0 none;
+        border-radius: 0.5rem;
+
+        @media screen and(min-width: $query__small) {
+            padding: 2em;
         }
     }
 }
@@ -209,9 +299,9 @@ aside.filters {
 
 // Estilos de formulario
 .acf-form {
-    
+
     .acf-tab-wrap {
-        margin-top: 2em!important;
+        margin-top: 2em !important;
     }
 
     .info {
@@ -228,7 +318,7 @@ aside.filters {
         background-color: #f4f4f4;
         margin: 0.5em 1% !important;
 
-        @media screen and (min-width: $query__medium) {
+        @media screen and(min-width: $query__medium) {
             padding: 2em !important;
         }
     }
@@ -238,7 +328,7 @@ aside.filters {
         @extend .card;
     }
     .input[placeholder] {
-        color: currentColor!important;
+        color: currentColor !important;
     }
     .acf-form-submit {
         margin-top: 4em;
@@ -266,17 +356,17 @@ aside.filters {
 
 // Responsive embeds
 
-.embed-container { 
-    position: relative; 
+.embed-container {
+    position: relative;
     padding-bottom: 56.25%;
     overflow: hidden;
-    //max-width: 100%;
+    // max-width: 100%;
     height: auto;
-} 
+}
 
 .embed-container iframe,
 .embed-container object,
-.embed-container embed { 
+.embed-container embed {
     position: absolute;
     top: 0;
     left: 0;
@@ -290,4 +380,26 @@ aside.filters {
     bottom: 20px;
     right: 20px;
     z-index: 99;
+}
+
+// Secciones
+.secciones {
+    scroll-behavior: smooth;
+
+    .seccion {
+        padding: 1em 0 0;
+        position: relative;
+
+        &:before {
+            content: "";
+            width: 6rem;
+            height: 0.5rem;
+            background-color: currentColor;
+            opacity: 0.2;
+            display: block;
+            left: 0;
+            top: 0;
+            position: absolute;
+        }
+    }
 }

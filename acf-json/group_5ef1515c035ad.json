@@ -23,7 +23,7 @@
             "label": "Opción de portada",
             "name": "pf_opcion",
             "type": "button_group",
-            "instructions": "",
+            "instructions": "Seleccione si la portada es una imagen o un video.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -142,7 +142,7 @@
                     "placeholder": "",
                     "prepend": "",
                     "append": "",
-                    "maxlength": 40
+                    "maxlength": 80
                 },
                 {
                     "key": "field_5f88be6ce9be3",
@@ -274,9 +274,9 @@
                 "class": "",
                 "id": ""
             },
-            "center_lat": "",
-            "center_lng": "",
-            "zoom": "",
+            "center_lat": "9.7991695",
+            "center_lng": "-84.1737991",
+            "zoom": 8,
             "height": ""
         },
         {
@@ -385,5 +385,5 @@
     ],
     "active": true,
     "description": "",
-    "modified": 1603214977
+    "modified": 1607397890
 }

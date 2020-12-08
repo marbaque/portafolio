@@ -56,13 +56,31 @@
 
 			<?php if (have_rows('pf_contenidos')) : ?>
 				<aside class="item-sidebar">
-					<ul class="menu-secciones">
-						<?php while (have_rows('pf_contenidos')) : the_row();
-							$secTitle = get_sub_field('seccion_title');
-						?>
-							<li><a href="#title_<?php echo get_row_index(); ?>"><?php echo $secTitle; ?></a></li>
-						<?php endwhile; ?>
-					</ul>
+					<div class="sticky-things">
+						<div class="widget widget-secciones">
+							<h3 class="menu-title">Contenidos</h3>
+							<ul class="menu-secciones">
+								<?php while (have_rows('pf_contenidos')) : the_row();
+									$secTitle = get_sub_field('seccion_title');
+								?>
+									<li><a href="#title_<?php echo get_row_index(); ?>"><?php echo $secTitle; ?></a></li>
+								<?php endwhile; ?>
+							</ul>
+						</div>
+						<?php
+						require get_stylesheet_directory() . '/inc/map.php';
+
+						$location = get_field('pf_map');
+						if ($location) : ?>
+							<div class="widget widget-map">
+								<h3 class="menu-title map">Ubicación</h3>
+							</div>
+							<div class="acf-map" data-zoom="16">
+								<div class="marker" data-lat="<?php echo esc_attr($location['lat']); ?>" data-lng="<?php echo esc_attr($location['lng']); ?>"></div>
+							</div>
+
+						<?php endif; ?>
+					</div>
 				</aside>
 			<?php endif; ?>
 
@@ -74,8 +92,8 @@
 							$secTitle = get_sub_field('seccion_title');
 							$secCont = get_sub_field('pf_seccion');
 						?>
-							<div class="seccion">
-								<h3 id="title_<?php echo get_row_index(); ?>"><?php echo $secTitle; ?></h3>
+							<div id="title_<?php echo get_row_index(); ?>" class="seccion">
+								<h3><?php echo $secTitle; ?></h3>
 								<?php echo $secCont; ?>
 							</div>
 						<?php endwhile; ?>
@@ -94,11 +112,13 @@
 					));
 					?>
 				<?php endif; ?>
+
+				<footer class="entry-footer">
+					<?php pemscores_entry_footer(); ?>
+				</footer><!-- .entry-footer -->
 			</div><!-- .entry-content -->
 
-			<footer class="entry-footer">
-				<?php pemscores_entry_footer(); ?>
-			</footer><!-- .entry-footer -->
+
 
 			<?php
 
@@ -111,26 +131,3 @@
 		<!--post-content__wrap -->
 	</section><!-- .post-content -->
 </article><!-- #post-## -->
-
-<?php
-global $post;
-$postID = $post->ID;
-function randomClave()
-{
-	$alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890';
-	$pass = array(); //remember to declare $pass as an array
-	$alphaLength = strlen($alphabet) - 1; //put the length -1 in cache
-	for ($i = 0; $i < 8; $i++) {
-		$n = rand(0, $alphaLength);
-		$pass[] = $alphabet[$n];
-	}
-	return implode($pass); //turn the array into a string
-}
-$hash = randomClave();
-?>
-
-<?php if (is_user_logged_in()) : ?>
-	<div class="wp-block-button">
-		<a class="boton-editar wp-block-button__link" href="../page-edit-item/?post=<?php echo $postID . '&key=' . $hash; ?>">Editar Ítem</a>
-	</div>
-<?php endif; ?>
