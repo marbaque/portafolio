@@ -36,8 +36,8 @@ function initMap( $el ) {
 
     // Create gerenic map.
     var mapArgs = {
-        zoom        : $el.data('zoom') || 5,
-        mapTypeId   : google.maps.MapTypeId.TERRAIN
+        zoom        : $el.data('zoom') || 8,
+        mapTypeId   : google.maps.MapTypeId.ROADMAP
     };
     var map = new google.maps.Map( $el[0], mapArgs );
 
