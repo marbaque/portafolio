@@ -1,0 +1,64 @@
+{
+    "key": "group_5fd258b4473a5",
+    "title": "Opciones del formulario",
+    "fields": [
+        {
+            "key": "field_5fd258c27c872",
+            "label": "Google Maps API Key",
+            "name": "maps_key",
+            "type": "text",
+            "instructions": "In order use of the Google Maps JavaScript API, you must first register a valid API key. To obtain an API key, please follow <a href=\"https:\/\/developers.google.com\/maps\/documentation\/javascript\/get-api-key\">Google’s Get an API Key<\/a> instructions. The Google Maps field requires the following APIs; Maps JavaScript API, Geocoding API and Places API.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": 60
+        },
+        {
+            "key": "field_5fd25ad47c873",
+            "label": "Página de formulario completado",
+            "name": "pagina_form",
+            "type": "page_link",
+            "instructions": "Para mostrar una página espefífica luego de haber completado el formulario de un ítem nuevo, seleccione una página previamente creada.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "page"
+            ],
+            "taxonomy": "",
+            "allow_null": 1,
+            "allow_archives": 0,
+            "multiple": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "acf-options-ajustes-del-portafolio"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1607625489
+}

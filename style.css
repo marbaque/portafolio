@@ -129,20 +129,20 @@
   margin-bottom: 0;
 }
 .single .post-content .item-sidebar .widget .menu-title {
-  font-size: 1.25em;
+  font-size: 0.75em;
+  text-transform: uppercase;
+  font-weight: 300;
+  letter-spacing: 2px;
 }
-.single .post-content .item-sidebar .widget .menu-title:before {
+.single .post-content .item-sidebar .widget .menu-title.map:before {
   content: "";
   display: inline-block;
   width: 1em;
   height: 1em;
-  background: url("images/leaf-oak-duotone.svg") no-repeat;
+  background: url("images/map-marked-alt-light.svg") no-repeat;
   background-size: contain;
   margin-bottom: -0.2em;
   margin-right: 0.25em;
-}
-.single .post-content .item-sidebar .widget .menu-title.map:before {
-  background: url("images/map-marked-alt-light.svg") no-repeat;
 }
 .single .post-content .item-sidebar .widget ul {
   list-style: none;
@@ -171,7 +171,7 @@
     top: 80px;
   }
   .single .post-content .post-content__wrap .post-content {
-    flex: 0 1 70%;
+    flex: 0 1 60%;
   }
   .single .post-content .post-content__wrap .comments-area {
     flex: 1 0 100%;

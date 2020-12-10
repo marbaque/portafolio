@@ -1,9 +1,10 @@
 <?php
-
 // Forumulario
 add_action('acf/init', 'my_acf_form_init');
 function my_acf_form_init()
 {
+    // Llamar API de las página de opciones del portafolio
+    $pagUrl = get_field('pagina_form', 'option');
 
     // Check function exists.
     if (function_exists('acf_register_form')) {
@@ -19,7 +20,7 @@ function my_acf_form_init()
             'field_groups' => array('group_5ef1515c035ad'), // Create post field group ID(s)
             'form' => true,
             'instruction_placement' => 'field',
-            'return'        => home_url('portafolio-nuevo-borrador'), // Redirect to new post url
+            'return'        => $pagUrl, // Redirect to new post url
             'honeypot' => true,
             //'html_before_fields' => '',
             //'html_after_fields' => '',

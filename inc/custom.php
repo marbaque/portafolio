@@ -22,9 +22,9 @@ function cp_change_post_object()
 }
 
 /**
- * Remove excerpt support from posts.
+ * Remove content support from posts.
  */
-function portafolio_custom_init() {
-    remove_post_type_support( 'post', 'editor' );
-}
-add_action( 'init', 'portafolio_custom_init' );
+// function portafolio_custom_init() {
+//     remove_post_type_support( 'post', 'editor' );
+// }
+// add_action( 'init', 'portafolio_custom_init' );

@@ -156,22 +156,20 @@ $query__medium: 900px;
                 }
 
                 .menu-title {
-                    font-size: 1.25em;
-
-                    &:before {
-                        content: "";
-                        display: inline-block;
-                        width: 1em;
-                        height: 1em;
-                        background: url('images/leaf-oak-duotone.svg') no-repeat;
-                        background-size: contain;
-                        margin-bottom: -0.2em;
-                        margin-right: 0.25em;
-
-                    }
+                    font-size: 0.75em;
+                    text-transform: uppercase;
+                    font-weight: 300;
+                    letter-spacing: 2px;
                     &.map {
                         &:before {
+                            content: "";
+                            display: inline-block;
+                            width: 1em;
+                            height: 1em;
                             background: url('images/map-marked-alt-light.svg') no-repeat;
+                            background-size: contain;
+                            margin-bottom: -0.2em;
+                            margin-right: 0.25em;
                         }
                     }
                 }
@@ -204,7 +202,7 @@ $query__medium: 900px;
 
                 .item-sidebar {
                     flex: 0 1 25%;
-                    
+
                     .sticky-things {
                         position: sticky;
                         top: 80px;
@@ -212,7 +210,7 @@ $query__medium: 900px;
                 }
 
                 .post-content {
-                    flex: 0 1 70%;
+                    flex: 0 1 60%;
                 }
 
                 .comments-area {

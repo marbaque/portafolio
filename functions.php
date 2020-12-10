@@ -72,16 +72,12 @@ function prefix_disable_gutenberg($current_status, $post_type)
 function isotopeinwp_scripts()
 {
     if (is_home() || is_archive()) {
-        
-        wp_register_script('imagesloaded', get_theme_file_uri('/js/libs/imagesloaded.pkgd.min.js'), array('jquery'), '4.1.4', true);
-        
-        wp_register_script('isotope', get_theme_file_uri('/js/libs/isotope.pkgd.min.js'), array('imagesloaded'), '3.0.6', true);
-        
-        wp_enqueue_script('isotopeinwp-settings', get_theme_file_uri('/js/isotope.settings.js'), array('isotope'), '1.0', true);
 
-        // Cargar js para google maps
-        wp_register_script('aa_js_googlemaps_script',  'https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyBVYf5Eqnw-6vkj1QcpuY8PfJXgPccf5tQ'); // with Google Maps API fix
-		wp_enqueue_script('aa_js_googlemaps_script');
+        wp_register_script('imagesloaded', get_theme_file_uri('/js/libs/imagesloaded.pkgd.min.js'), array('jquery'), '4.1.4', true);
+
+        wp_register_script('isotope', get_theme_file_uri('/js/libs/isotope.pkgd.min.js'), array('imagesloaded'), '3.0.6', true);
+
+        wp_enqueue_script('isotopeinwp-settings', get_theme_file_uri('/js/isotope.settings.js'), array('isotope'), '1.0', true);
     }
 }
 
@@ -113,10 +109,23 @@ function portafolios_post_class($classes)
     return array_unique($out);
 }
 
+// Página de opciones del form
+if (function_exists('acf_add_options_page')) {
+
+    acf_add_options_page(array(
+        'page_title'     => 'Ajustes generales del portafolio',
+        'menu_title'    => 'Ajustes del portafolio',
+        'position'      => '3.2'
+    ));
+}
+
 
 // Google maps API - Method 2: Setting.
-function my_acf_init() {
-    acf_update_setting('google_api_key', 'AIzaSyBVYf5Eqnw-6vkj1QcpuY8PfJXgPccf5tQ');
+function my_acf_init()
+{
+    // Llamar API de las página de opciones del portafolio
+    $api = get_field('maps_key', 'option');
+    acf_update_setting('google_api_key', $api);
 }
 add_action('acf/init', 'my_acf_init');
 

@@ -1,4 +1,6 @@
 <?php
+// Llamar API de las página de opciones del portafolio
+$api = get_field('maps_key', 'option');
 ?>
 <style type="text/css">
 .acf-map {
@@ -14,7 +16,7 @@
    max-width: inherit !important;
 }
 </style>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVYf5Eqnw-6vkj1QcpuY8PfJXgPccf5tQ"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=<?php echo $api; ?>"></script>
 <script type="text/javascript">
 (function( $ ) {
 

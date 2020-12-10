@@ -3,10 +3,10 @@
     "title": "Datos del ítem",
     "fields": [
         {
-            "key": "field_5f88cfc24b6da",
-            "label": "Contenidos",
-            "name": "",
-            "type": "tab",
+            "key": "field_5fd26bf401272",
+            "label": "Portada",
+            "name": "portada_group",
+            "type": "group",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -15,96 +15,97 @@
                 "class": "",
                 "id": ""
             },
-            "placement": "top",
-            "endpoint": 0
-        },
-        {
-            "key": "field_5f1b80e7be6fe",
-            "label": "Opción de portada",
-            "name": "pf_opcion",
-            "type": "button_group",
-            "instructions": "Seleccione si la portada es una imagen o un video.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "card",
-                "id": ""
-            },
-            "choices": {
-                "imagen": "imagen",
-                "video": "video"
-            },
-            "allow_null": 0,
-            "default_value": "imagen",
-            "layout": "horizontal",
-            "return_format": "value"
-        },
-        {
-            "key": "field_5ef152305cb6d",
-            "label": "Imagen para portada",
-            "name": "pf_portada",
-            "type": "image",
-            "instructions": "Comparta una imagen descriptiva de su proyecto. Puede compartir la imagen arrastrando su ícono sobre la ventana que se despliega al hacer clic en \"Seleccionar imagen\". Los archivos grandes JPG, PNG (de ancho superior a 1000px) funcionan mejor.",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_5f1b80e7be6fe",
-                        "operator": "==",
-                        "value": "imagen"
+            "layout": "row",
+            "sub_fields": [
+                {
+                    "key": "field_5f1b80e7be6fe",
+                    "label": "Opción de portada",
+                    "name": "pf_opcion",
+                    "type": "button_group",
+                    "instructions": "Seleccione si la portada es una imagen o un video.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
                     },
-                    {
-                        "field": "field_5f1b80e7be6fe",
-                        "operator": "!=",
-                        "value": "video"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "",
-                "class": "card",
-                "id": ""
-            },
-            "return_format": "id",
-            "preview_size": "medium",
-            "library": "uploadedTo",
-            "min_width": 600,
-            "min_height": "",
-            "min_size": "",
-            "max_width": 3000,
-            "max_height": "",
-            "max_size": "",
-            "mime_types": ""
-        },
-        {
-            "key": "field_5f1b7f74c69e6",
-            "label": "Video de portada",
-            "name": "pf_video",
-            "type": "oembed",
-            "instructions": "Agregue el enlace del video o medio que desea mostrar en la portada.",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_5f1b80e7be6fe",
-                        "operator": "==",
-                        "value": "video"
+                    "choices": {
+                        "imagen": "imagen",
+                        "video": "video"
                     },
-                    {
-                        "field": "field_5f1b80e7be6fe",
-                        "operator": "!=",
-                        "value": "imagen"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "",
-                "class": "card",
-                "id": ""
-            },
-            "width": 720,
-            "height": 480
+                    "allow_null": 0,
+                    "default_value": "imagen",
+                    "layout": "horizontal",
+                    "return_format": "value"
+                },
+                {
+                    "key": "field_5ef152305cb6d",
+                    "label": "Imagen para portada",
+                    "name": "pf_portada",
+                    "type": "image",
+                    "instructions": "Comparta una imagen descriptiva de su proyecto. Puede compartir la imagen arrastrando su ícono sobre la ventana que se despliega al hacer clic en \"Seleccionar imagen\". Los archivos grandes JPG, PNG (de ancho superior a 1000px) funcionan mejor.",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5f1b80e7be6fe",
+                                "operator": "==",
+                                "value": "imagen"
+                            },
+                            {
+                                "field": "field_5f1b80e7be6fe",
+                                "operator": "!=",
+                                "value": "video"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "id",
+                    "preview_size": "medium",
+                    "library": "uploadedTo",
+                    "min_width": 600,
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": 3000,
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": ""
+                },
+                {
+                    "key": "field_5f1b7f74c69e6",
+                    "label": "Video de portada",
+                    "name": "pf_video",
+                    "type": "oembed",
+                    "instructions": "Agregue el enlace del video o medio que desea mostrar en la portada.",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5f1b80e7be6fe",
+                                "operator": "==",
+                                "value": "video"
+                            },
+                            {
+                                "field": "field_5f1b80e7be6fe",
+                                "operator": "!=",
+                                "value": "imagen"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "width": 720,
+                    "height": 480
+                }
+            ]
         },
         {
             "key": "field_5f88be3be9be2",
@@ -227,22 +228,6 @@
             "min_size": "",
             "max_size": 10,
             "mime_types": "pdf"
-        },
-        {
-            "key": "field_5f88d0067d3bb",
-            "label": "Información",
-            "name": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "placement": "top",
-            "endpoint": 0
         },
         {
             "key": "field_5ef2841264b13",
@@ -385,5 +370,5 @@
     ],
     "active": true,
     "description": "",
-    "modified": 1607399750
+    "modified": 1607625856
 }
