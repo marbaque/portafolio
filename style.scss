@@ -401,3 +401,11 @@ aside.filters {
         }
     }
 }
+
+// Arreglar estilo de imputs heredado del menu institucional
+.acf-field {
+    input::placeholder,
+    input[placeholder] {
+        color: #333 !important;
+    }
+}

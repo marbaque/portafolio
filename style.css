@@ -328,4 +328,9 @@ aside.filters button.sort {
   position: absolute;
 }
 
+.acf-field input::placeholder,
+.acf-field input[placeholder] {
+  color: #333 !important;
+}
+
 /*# sourceMappingURL=style.css.map */
