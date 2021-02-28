@@ -23,11 +23,11 @@ $pf_all_query = new WP_Query(array(
 	'posts_per_page' => -1
 ));
 ?>
-<?php if ($pf_all_query->have_posts()) : ?>
+
 
 	<div id="primary" class="portafolios-area">
 		<main id="main" class="site-main" role="main">
-
+		<?php if ($pf_all_query->have_posts()) : ?>
 			<?php
 			if (function_exists('pemscores_breadcrumbs')) {
 				pemscores_breadcrumbs();
@@ -54,10 +54,13 @@ $pf_all_query = new WP_Query(array(
 					<?php get_template_part('template-parts/content', get_post_format()); ?>
 					<?php wp_reset_postdata(); ?>
 
-			<?php endwhile;
+			<?php endwhile; ?>
 
+				<?php else : ?>
 
-			endif; ?>
+				<p align="center">No hai ítems del portafolio aún.</p>
+
+			<?php endif; ?>
 
 			</div>
 

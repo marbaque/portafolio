@@ -22,9 +22,7 @@
 
 	<?php elseif (has_post_thumbnail()) : ?>
 		<figure class="featured-image full-bleed">
-			<?php
-			the_post_thumbnail('pemscores-full-bleed');
-			?>
+			<?php the_post_thumbnail('pemscores-full-bleed'); ?>
 		</figure><!-- .featured-image full-bleed -->
 	<?php endif; ?>
 
