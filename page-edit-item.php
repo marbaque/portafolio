@@ -26,7 +26,7 @@ get_header();
 					'post_title'   => true,
 					'post_content' => false,
 					'field_groups' => array('group_5ef1515c035ad'), // Create post field group ID(s)            
-					'submit_value' => 'Actualizar contenido',
+					'submit_value' => 'Actualizar',
 					'return' => '%post_url%' //Returns to the original post
 				));
 
