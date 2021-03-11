@@ -13,25 +13,17 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php
 	// Load value
-	$portadaBtn = get_field('pf_opcion');
 	$video = get_field('pf_video');
 
-	var_dump($portadaBtn);
+	if ($video) : ?>
+		<div class="embed-container featured-image full-bleed">
+			<?php the_field('pf_video'); ?>
+		</div>
 
-	if (get_field('pf_opcion') == 'video') : ?>
-		<?php if ($video) : ?>
-			<div class="embed-container featured-image full-bleed">
-				<?php the_field('pf_video'); ?>
-			</div>
-		<?php endif; ?>
-
-	<?php elseif (get_field('pf_opcion') == 'imagen') : ?>
-
-		<?php if (has_post_thumbnail()) : ?>
-			<figure class="featured-image full-bleed">
-				<?php the_post_thumbnail('pemscores-full-bleed'); ?>
-			</figure><!-- .featured-image full-bleed -->
-		<?php endif; ?>
+	<?php elseif (has_post_thumbnail()) : ?>
+		<figure class="featured-image full-bleed">
+			<?php the_post_thumbnail('pemscores-full-bleed'); ?>
+		</figure><!-- .featured-image full-bleed -->
 	<?php endif; ?>
 
 	<?php
@@ -53,7 +45,7 @@
 	<section class="post-content">
 
 		<div class="post-content__wrap">
-
+			
 			<?php if (have_rows('pf_contenidos')) : ?>
 				<aside class="item-sidebar">
 					<div class="sticky-things">
