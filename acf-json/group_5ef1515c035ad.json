@@ -35,7 +35,7 @@
                         "video": "video"
                     },
                     "allow_null": 0,
-                    "default_value": "imagen",
+                    "default_value": "none",
                     "layout": "horizontal",
                     "return_format": "value"
                 },
@@ -370,5 +370,5 @@
     ],
     "active": true,
     "description": "",
-    "modified": 1607625856
+    "modified": 1615418453
 }

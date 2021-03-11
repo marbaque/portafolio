@@ -74,17 +74,17 @@ add_action('acf/save_post', 'my_save_post');
 function my_save_post($post_id)
 {
 
-    // bail early if not a contact_form post
+    // bail early if not a form post
     if (get_post_type($post_id) !== 'new-portafolio') {
 
         return;
     }
 
     // bail early if editing in admin
-    // if (is_admin()) {
+    if (is_admin()) {
 
-    //     return;
-    // }
+        return;
+    }
 
 
     // vars
@@ -96,9 +96,13 @@ function my_save_post($post_id)
     $email = get_field('pf_correo', $post_id);
     $notas = get_field('pf_notas', $post_id);
 
-
     // email data
-    $to = 'sis_ecen@uned.ac.cr'; // Modificar este correo al que se envían las notificaciones.
+    $adminMail = get_field('correo_admin', 'option');
+    if ($adminMail) {
+        $to = $adminMail; //cargar correo de página de opciones
+    } else {
+        $to = 'sis_ecen@uned.ac.cr'; // Enviar al correo por defecto las notificaciones.
+    }
     $headers = 'De: ' . $name . ' <' . $email . '>' . "\r\n";
     $subject = $post->post_title;
     $body = $name . ' ha creado un ítem de portafolio en el sitio.\nUn usuario administrador tiene que aprobarlo y publicarlo para que sea visible.\n';
@@ -107,6 +111,22 @@ function my_save_post($post_id)
 
     // send email
     wp_mail($to, $subject, $body, $headers);
+}
 
-    //wp_mail($name, $subject, $body, $headers);
+
+/* 
+   Debug preview with custom fields 
+*/
+
+add_filter('_wp_post_revision_fields', 'add_field_debug_preview');
+function add_field_debug_preview($fields)
+{
+    $fields["debug_preview"] = "debug_preview";
+    return $fields;
+}
+
+add_action('edit_form_after_title', 'add_input_debug_preview');
+function add_input_debug_preview()
+{
+    echo '<input type="hidden" name="debug_preview" value="debug_preview">';
 }

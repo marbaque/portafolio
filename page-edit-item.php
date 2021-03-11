@@ -1,6 +1,6 @@
 <?php
 /*
-** Template Name: Formulario de editar ítem
+** Template Name: Modo edición
 ** Template Post Type: post, page
 */
 

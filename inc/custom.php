@@ -20,11 +20,3 @@ function cp_change_post_object()
     $labels->menu_name = 'Portafolio';
     $labels->name_admin_bar = 'Ítems';
 }
-
-/**
- * Remove content support from posts.
- */
-// function portafolio_custom_init() {
-//     remove_post_type_support( 'post', 'editor' );
-// }
-// add_action( 'init', 'portafolio_custom_init' );

@@ -13,17 +13,25 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php
 	// Load value
+	$portadaBtn = get_field('pf_opcion');
 	$video = get_field('pf_video');
 
-	if ($video) : ?>
-		<div class="embed-container featured-image full-bleed">
-			<?php the_field('pf_video'); ?>
-		</div>
+	var_dump($portadaBtn);
 
-	<?php elseif (has_post_thumbnail()) : ?>
-		<figure class="featured-image full-bleed">
-			<?php the_post_thumbnail('pemscores-full-bleed'); ?>
-		</figure><!-- .featured-image full-bleed -->
+	if (get_field('pf_opcion') == 'video') : ?>
+		<?php if ($video) : ?>
+			<div class="embed-container featured-image full-bleed">
+				<?php the_field('pf_video'); ?>
+			</div>
+		<?php endif; ?>
+
+	<?php elseif (get_field('pf_opcion') == 'imagen') : ?>
+
+		<?php if (has_post_thumbnail()) : ?>
+			<figure class="featured-image full-bleed">
+				<?php the_post_thumbnail('pemscores-full-bleed'); ?>
+			</figure><!-- .featured-image full-bleed -->
+		<?php endif; ?>
 	<?php endif; ?>
 
 	<?php
@@ -35,12 +43,7 @@
 	<header class="entry-header">
 		<?php pemscores_the_category_list(); ?>
 
-		<?php
-		if (is_single()) :
-			the_title('<h1 class="entry-title">', '</h1>');
-		else :
-			the_title('<h2 class="entry-title"><a href="' . esc_url(get_permalink()) . '" rel="bookmark">', '</a></h2>');
-		endif; ?>
+		<?php the_title('<h1 class="entry-title">', '</h1>'); ?>
 
 		<div class="entry-meta">
 			<?php portafolios_posted_on(); ?>
@@ -50,7 +53,6 @@
 	<section class="post-content">
 
 		<div class="post-content__wrap">
-
 
 			<?php if (have_rows('pf_contenidos')) : ?>
 				<aside class="item-sidebar">
