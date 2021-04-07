@@ -12,31 +12,7 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-	<?php
-	//second false skip ACF pre-processcing
-	$url = get_field('pf_video', false, false);
-	?>
-
-	<?php if ($url) : ?>
-
-		<?php
-		//get wp_oEmed object, not a public method. new WP_oEmbed() would also be possible
-		$oembed = _wp_oembed_get_object();
-		//get provider
-		$provider = $oembed->get_provider($url);
-		//fetch oembed data as an object
-		$oembed_data = $oembed->fetch($provider, $url);
-		$thumbnail = $oembed_data->thumbnail_url;
-		$iframe = $oembed_data->html;
-		?>
-
-		<a href="<?php echo esc_url(get_permalink()); ?>" rel="bookmark">
-			<figure class="featured-image index-img">
-				<img src="<?php echo $thumbnail; ?>" alt="<?php the_title(); ?>">
-			</figure>
-		</a>
-
-	<?php elseif (has_post_thumbnail()) : ?>
+	<?php if (has_post_thumbnail()) : ?>
 		<a href="<?php echo esc_url(get_permalink()); ?>" rel="bookmark">
 			<figure class="featured-image index-img">
 				<?php

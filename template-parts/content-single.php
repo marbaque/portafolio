@@ -11,16 +11,8 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<?php
-	// Load value
-	$video = get_field('pf_video');
-
-	if ($video) : ?>
-		<div class="embed-container featured-image full-bleed">
-			<?php the_field('pf_video'); ?>
-		</div>
-
-	<?php elseif (has_post_thumbnail()) : ?>
+	
+	<?php if (has_post_thumbnail()) : ?>
 		<figure class="featured-image full-bleed">
 			<?php the_post_thumbnail('pemscores-full-bleed'); ?>
 		</figure><!-- .featured-image full-bleed -->
